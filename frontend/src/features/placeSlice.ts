@@ -15,14 +15,14 @@ const initialState: IState = {
 };
 
 export const getPlace = createAsyncThunk("place/get", async () => {
-	const response = await instance.get<IPlace[]>("/place");
+	const response = await instance.get<IPlace[]>("/places");
 	return response.data;
 });
 
 export const postPlace = createAsyncThunk(
 	"place/post",
 	async (payload: FormData) => {
-		const response = await instance.post<IPlace>("/place", payload);
+		const response = await instance.post<IPlace>("/places", payload);
 		return response.data;
 	},
 );
@@ -30,7 +30,7 @@ export const postPlace = createAsyncThunk(
 export const getPlaceById = createAsyncThunk(
 	"place/getById",
 	async (id: number) => {
-		const response = await instance.get<IPlace[]>(`/place/${id}`);
+		const response = await instance.get<IPlace[]>(`/places/${id}`);
 		return response.data;
 	},
 );
@@ -39,7 +39,7 @@ export const deletePlace = createAsyncThunk(
 	"delete/place",
 	async (id: number, thunkAPI) => {
 		const { dispatch } = thunkAPI;
-		const response = await instance.delete(`/place/${id}`);
+		const response = await instance.delete(`/places/${id}`);
 		dispatch(getPlace());
 		return response.data;
 	},
