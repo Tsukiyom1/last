@@ -46,7 +46,7 @@ const PlaceSubmit = ({ onSubmit }: Props) => {
 			formData.append(key, value);
 		});
 
-		// onSubmit(formData);
+		onSubmit(formData);
 	};
 	return (
 		<form onSubmit={submitFormHandler}>

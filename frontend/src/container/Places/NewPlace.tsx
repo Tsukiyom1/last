@@ -1,14 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import { getPlace, postPlace } from "../../features/placeSlice";
 import { useAppDispatch } from "../../store/hooks";
 import PlaceSubmit from "./PlaceSubmit";
 
 const NewPlace = () => {
 	const dispatch = useAppDispatch();
+	const navigate = useNavigate();
 	const onPlaceFormSubmit = async (artistData: FormData) => {
 		await dispatch(postPlace(artistData)).then(() => {
 			dispatch(getPlace());
 		});
-		// navigate("/");
+		navigate("/");
 	};
 	return (
 		<div>
