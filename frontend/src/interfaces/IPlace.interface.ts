@@ -1,3 +1,4 @@
+import type { IFeedback } from "./IFeedbac.interface";
 import type { IImage } from "./IImage.interface";
 
 export interface IPlace {
@@ -7,6 +8,6 @@ export interface IPlace {
 	main_image: string;
 	userId: number;
 	images: IImage[];
-	comments: unknown[];
+	feedbacks: IFeedback[];
 	rating?: { food: number; service: number; interior: number; total: number };
 }

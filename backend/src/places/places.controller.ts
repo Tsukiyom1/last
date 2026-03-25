@@ -52,10 +52,6 @@ export class PlacesController {
 		}
 
 		const dto = new CreatePlaceDto();
-		console.log(body, "body");
-
-		console.log(dto, "dto");
-
 		dto.name = body.name ?? "";
 		dto.description = body.description ?? "";
 		dto.userId = Number(body.userId!);

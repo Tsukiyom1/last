@@ -31,7 +31,7 @@ const Places = () => {
 			</div>
 			<div className='flex flex-row  gap-20 flex-wrap items-center justify-center'>
 				{places.map(place =>
-					userInfo?.role === "user" ? (
+					userInfo?.role === "admin" ? (
 						<div
 							className='max-w-sm bg-blend-normal border border-gray-200  rounded-lg shadow '
 							key={place.id}

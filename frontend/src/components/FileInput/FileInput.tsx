@@ -12,8 +12,6 @@ const FileInput = ({ label, name, onChange }: IFileINput) => {
 	const [fileName, setFileName] = useState("");
 
 	const onFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-		console.log(e.target.files);
-
 		if (e.target.files && e.target.files[0]) {
 			setFileName(e.target.files[0].name);
 		} else {
